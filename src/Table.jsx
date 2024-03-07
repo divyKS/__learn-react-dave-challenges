@@ -4,6 +4,7 @@ const Table = ({ data }) => {
     return (
         <>
             <table>
+                <tbody>
                 {
                     data.map((item)=>(
                         <tr>
@@ -15,6 +16,7 @@ const Table = ({ data }) => {
                         </tr>
                     ))
                 }
+                </tbody>
             </table>
         </>
   )
