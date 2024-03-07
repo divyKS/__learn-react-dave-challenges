@@ -1,9 +1,13 @@
 import React from 'react'
 
-const ListItem = () => {
-  return (
-    <div>ListItem</div>
-  )
+const ListItem = ({ item }) => {
+	return (
+		<>
+			<li>
+				{JSON.stringify(item)}
+			</li>
+		</>
+	)
 }
 
 export default ListItem

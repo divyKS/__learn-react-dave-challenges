@@ -1,8 +1,27 @@
 import React from 'react'
+import Button from './Button'
 
-const Form = () => {
+const Form = ({ resource, setResource }) => {
   return (
-    <div>Form</div>
+    <>
+        <form onClick={(e)=>e.preventDefault()}>
+            <Button
+                textContent="users"
+                resource={resource}
+                setResource={setResource}
+            />
+            <Button
+                textContent="posts"
+                resource={resource}
+                setResource={setResource}
+            />
+            <Button
+                textContent="comments"
+                resource={resource}
+                setResource={setResource}
+            />
+        </form>
+    </>
   )
 }
 

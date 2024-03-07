@@ -7,10 +7,6 @@ function App() {
 	const API_URL = "https://jsonplaceholder.typicode.com";
 	const [resource, setResource] = useState("users");
 	const [data, setData] = useState([]);
-	
-	const chosenResource = async (e) => {
-		setResource(e.target.textContent);
-	}
 
 	useEffect(()=>{
 		const getData = async () => {
@@ -27,20 +23,14 @@ function App() {
 
 	return( 
 		<>
-			<Form />
-			<List />
-			<header>
-				<button onClick={(e)=>chosenResource(e)}>users</button>
-				<button onClick={(e)=>chosenResource(e)}>posts</button>
-				<button onClick={(e)=>chosenResource(e)}>comments</button>
-			</header>
-			<main>
-				<ul>
-					{data.map(object=>{
-						return <li key={object.id}>{JSON.stringify(object)}</li>
-					})}
-				</ul>	
-			</main>
+			<Form
+				resource={resource}
+				setResource={setResource}
+			/>
+			<List
+				data={data}
+				setData={setData}
+			/>
 		</>
 	);
 }

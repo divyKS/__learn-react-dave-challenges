@@ -1,10 +1,17 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-const List = () => {
+const List = ({ data, setData }) => {
   return (
     <>
-        <ListItem />
+		<ul>
+			{data.map((item)=>(
+				<ListItem
+					key={item.id}
+					item={item}
+				/>
+	        ))}
+      </ul>
     </>
   )
 }
